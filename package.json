@@ -1,7 +1,7 @@
 {
 	"name": "phpfn",
 	"version": "0.0.2",
-	"description": "Load function from phpjs.org by demand.",
+	"description": "Load function from phpjs.org on demand.",
 	"main": "index.js",
 	"scripts": {},
 	"author": "S",
