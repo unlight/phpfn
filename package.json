@@ -1,6 +1,6 @@
 {
 	"name": "phpfn",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Load function from phpjs.org by demand.",
 	"main": "index.js",
 	"scripts": {},

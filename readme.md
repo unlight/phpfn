@@ -1,15 +1,18 @@
 phpfn
-=====
+-----
 Load function from phpjs.org by demand.
 
-Examples:
+Examples
+--------
 ```js
 var phpfn = require("phpfn");
 phpfn("trim", function(error, trim) {
 	if (error) throw error;
 	console.log(trim("xABCx", "x")); // ABC
 });
+```
 
+```js
 var phpfn = require("phpfn");
 phpfn("date", function(error, date) {
 	if (error) throw error;
