@@ -1,11 +1,15 @@
 {
 	"name": "phpfn",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Load function from phpjs.org on demand.",
 	"main": "index.js",
 	"scripts": {},
 	"author": "S",
-	"license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/unlight/phpfn.git"
+    },
+	"license": "MIT",
 	"devDependencies": {
 		"async": "^0.9.0",
 		"cheerio": "^0.16.0",
