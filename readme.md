@@ -1,6 +1,6 @@
 phpfn
 -----
-Load function from phpjs.org on demand.
+Load function from phpjs.org.
 
 Examples
 --------
