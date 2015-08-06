@@ -1,19 +1,19 @@
 {
-	"name": "phpfn",
-	"version": "0.0.4",
-	"description": "Load function from phpjs.org.",
-	"main": "index.js",
-	"scripts": {},
-	"author": "S",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/unlight/phpfn.git"
-    },
-	"license": "MIT",
-	"devDependencies": {
-		"async": "^0.9.0",
-		"cheerio": "^0.16.0",
-		"request": "^2.36.0",
-		"wru": "^0.2.7"
-	}
+  "name": "phpfn",
+  "version": "1.0.0",
+  "description": "Get selected function from phpjs.org.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "S",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unlight/phpfn.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "phpjs": "latest"
+  },
+  "devDependencies": {
+    "wru": "^0.2.7"
+  }
 }

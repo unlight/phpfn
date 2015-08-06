@@ -1,11 +1,40 @@
-var functions = require("./etc/data.json");
-var fileGetContents = require("./etc/file-get-contents.js");
-var format = require("util").format;
+"use strict";
+var vm = require("vm");
+var fs = require("fs");
 var phpFunctions = {};
+var functions = require("./pathmap.json");
+
+function getSync(name) {
+	var fn = phpFunctions[name];
+	if (!fn) {
+		var funcpath = functions[name];
+		var bodypath = require.resolve("phpjs/functions/" + funcpath);
+		var body = fs.readFileSync(bodypath, {
+			encoding: "utf8"
+		});
+		vm.runInNewContext(body, phpFunctions);
+		fn = phpFunctions[name];
+	}
+	return fn;
+}
 
 module.exports = function(name, callback) {
+	
+	if (arguments.length == 1) {
+		return getSync(name);
+	}
+	
 	var url = functions[name];
+
+	var fileGetContents = function(path, next) {
+		var bodypath = require.resolve("phpjs/functions/" + path);
+		fs.readFile(bodypath, {
+			encoding: "utf8"
+		}, next);
+	};
+
 	if (!url) {
+		var format = require("util").format;
 		throw new Error(format("Unknown function '%s'.", name));
 	}
 	var fn = phpFunctions[name];
@@ -17,7 +46,6 @@ module.exports = function(name, callback) {
 		if (error) {
 			return callback(error);
 		}
-		var vm = require("vm");
 		vm.runInNewContext(body, phpFunctions);
 		var fn = phpFunctions[name];
 		if (typeof fn === "function") {
