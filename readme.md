@@ -1,9 +1,9 @@
 phpfn
 -----
-Load function from phpjs.org.
+Get selected function from phpjs.org.
 
-Examples
---------
+USAGE
+-----
 ```js
 var phpfn = require("phpfn");
 phpfn("trim", function(error, trim) {
@@ -11,11 +11,13 @@ phpfn("trim", function(error, trim) {
 	console.log(trim("xABCx", "x")); // ABC
 });
 ```
-
+#### Synchronous version
 ```js
 var phpfn = require("phpfn");
-phpfn("date", function(error, date) {
-	if (error) throw error;
-	console.log(date("Y-m-d")); // 2014-06-17
-});
+var ucfirst = phpfn("ucfirst");
+console.log(ucfirst("abc")); // Abc
 ```
+
+TODO
+----
+- dependent functions
