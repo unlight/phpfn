@@ -1,5 +1,7 @@
 phpfn
 -----
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/unlight/phpfn.svg)](https://greenkeeper.io/)
 Get selected function from phpjs.org.
 
 USAGE
