@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Get selected function from phpjs.org.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
   "author": "S",
   "repository": {
     "type": "git",
@@ -11,9 +14,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "phpjs": "latest"
+    "phpjs": "latest",
+    "snyk": "^1.30.0"
   },
   "devDependencies": {
     "wru": "^0.2.7"
-  }
+  },
+  "snyk": true
 }
